@@ -24,11 +24,8 @@ public class MoonMover : MonoBehaviour
         rotAngle += Time.deltaTime * rotAngleSpeed;
         posAngle += Time.deltaTime * posAngleSpeed;
         this.transform.rotation = Quaternion.AngleAxis(rotAngle, rotAxis);
-        Debug.DrawRay(orbitCenter, orbitDir, Color.red);
         var orbitPolorAxis = Vector3.Cross(orbitDir, Vector3.forward).normalized;
         var orbitPolorDir = Vector3.Cross(orbitDir, orbitPolorAxis).normalized;
-        Debug.DrawLine(orbitCenter, orbitCenter + orbitPolorAxis * orbitRad, Color.green);
-        Debug.DrawLine(orbitCenter, orbitCenter + orbitPolorDir * orbitRad, Color.cyan);
 
         this.transform.localPosition = orbitCenter 
                                        + orbitPolorAxis * Mathf.Cos(posAngle) * orbitRad
