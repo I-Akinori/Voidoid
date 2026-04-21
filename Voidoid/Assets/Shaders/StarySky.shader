@@ -64,7 +64,7 @@ Shader "Unlit/StarySky"
                 int stars = 500;
                 
                 float2 uv = i.uv - 0.5;
-                float angle = _Time.y * 0.1;
+                float angle = _Time.y * 0.03;
                 float uvx = cos(angle) * uv.x - sin(angle) * uv.y;
                 float uvy = sin(angle) * uv.x + cos(angle) * uv.y;
                 uv = float2(uvx, uvy) + 0.5;
@@ -77,9 +77,15 @@ Shader "Unlit/StarySky"
                     float r = rand(float2(y, x));
                     float g = rand(float2(x, r));
                     float b = rand(float2(y, r));
-                    col += star(uv, pos, f, f + 0.2,
-                        float4(r, g, b, 1) * 0.5 + float4(1, 1, 1, 1) * 0.5);
+                    float blink = sin(_Time.y * 2 * rand(float2(k, x)) + f) * 0.4 + 0.6;
+                    float shift_angle = rand(float2(r, x)) * _Time.y * 0.02;
+                    float uvx_shift = cos(shift_angle) * uvx - sin(shift_angle) * uvy;
+                    float uvy_shift = sin(shift_angle) * uvx + cos(shift_angle) * uvy;
+                    float2 uv_shift = float2(uvx_shift, uvy_shift) + 0.5;
+                    col += star(uv_shift, pos, f, f + 0.2,
+                        float4(r, g, b, 1) * 0.5 + float4(1, 1, 1, 1) * 0.5) * blink;
                 }
+                //uv += 0.5;
                 float n1 = ClassicNoise(uv * 1 + _Time.y * 0.02) * 2;
                 float n2 = ClassicNoise((uv + 2) * 3) * 1;
                 float n = ClassicNoise(float2(n1, n2) * 1);

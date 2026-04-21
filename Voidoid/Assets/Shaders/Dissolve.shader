@@ -2,9 +2,26 @@ Shader "Unlit/Dissolve"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
         _Threshold ("Threshold", Range(0, 2)) = 0.5
-        _Origin ("Origin", Vector) = (0, 0, 0, 1)
+        _Origin ("Origin", Vector) = (0, 0, 0, 0)
+        _ColorA ("ColorA", Color) = (1, 1, 1, 1)
+        _CenterA ("CenterA", Vector) = (0, 0, 0, 0)
+        _FreqA ("FreqA", float) = 0.5
+        _SpeedA ("SpeedA", float) = 0.5
+        _ValueA ("ValueA", Range(0, 1)) = 0.5
+        
+        _ColorB ("ColorB", Color) = (1, 1, 1, 1)
+        _CenterB ("CenterB", Vector) = (0, 0, 0, 0)
+        _FreqB ("FreqB", float) = 0.5
+        _SpeedB ("SpeedB", float) = 0.5
+        _ValueB ("ValueB", Range(0, 1)) = 0.5
+        
+        _ColorC ("ColorC", Color) = (1, 1, 1, 1)
+        _CenterC ("CenterC", Vector) = (0, 0, 0, 0)
+        _FreqC ("FreqC", float) = 0.5
+        _SpeedC ("SpeedC", float) = 0.5
+        _ValueC ("ValueC", Range(0, 1)) = 0.5
+        
         _Axis ("Axis", Vector) = (0, 0, 1, 0)
     }
     SubShader
@@ -34,20 +51,38 @@ Shader "Unlit/Dissolve"
             {
                 float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
-                float4 worldPos : TEXCOORD1;
+                float4 worldPosSrc : TEXCOORD1;
+                float4 worldPosDis : TEXCOORD2;
             };
 
-            sampler2D _MainTex;
-            float4 _MainTex_ST;
             float _Threshold;
             float4 _Origin;
             float4 _Axis;
+            
+            float4 _ColorA;
+            float4 _CenterA;
+            float _FreqA;
+            float _SpeedA;
+            float _ValueA;
+            
+            float4 _ColorB;
+            float4 _CenterB;
+            float _FreqB;
+            float _SpeedB;
+            float _ValueB;
+            
+            float4 _ColorC;
+            float4 _CenterC;
+            float _FreqC;
+            float _SpeedC;
+            float _ValueC;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 float4 worldPos = mul(unity_ObjectToWorld, v.vertex);
+                o.worldPosSrc = worldPos;
                 worldPos -= _Origin;
                 float3 axisZ = normalize(_Axis.xyz);
                 float3 axisX = normalize(cross(axisZ, float3(1, 0, 0)));
@@ -58,36 +93,40 @@ Shader "Unlit/Dissolve"
                 float r = sqrt(x * x + y * y);
                 float t = atan2(y, x);
                 //t += 3.141592 * 0.25;
-                t += r * _Threshold * _Threshold * 2;
+                t += r * _Threshold * _Threshold * _Threshold * 0.2;
                 float x2 = r * cos(t);
                 float y2 = r * sin(t);
                 float3 p = axisX * x2 + axisY * y2 + axisZ * z2;
-                o.worldPos = float4(p, 0) + _Origin;
+                o.worldPosDis = float4(p, 0) + _Origin;
                 //o.worldPos = mul(unity_ObjectToWorld, v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv = v.uv;
                 
                 return o;
+            }
+            float4 sphere_wave(float4 pos, float4 cen, float freq, float speed, float val, float4 col)
+            {
+                float len = length(pos.xyz - cen.xyz) / (0.001 + val);
+                float v01 = 0;
+                if (len * freq - val * speed < 3)
+                {
+                    v01 = fmod(len * freq - val * speed, 1.0);
+                    v01 = v01 < 0 ? v01 + 1 : v01;
+                    v01 = exp(-v01 * 2.0) * (1 - val);
+                    v01 = saturate(v01);
+                }
+                float4 white = float4(1, 1, 1, 1);
+                return lerp(white, col, v01);
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-                // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
-                float v = 1 + SimplexNoise(SimplexNoiseGrad(i.worldPos * 0.5) * 0.25);
-                v *= 0.5;
-                if (length(i.worldPos.xy) < 1)
-                {
-                    //return fixed4(0, 0, 1, 1);
-                }
-                if (i.worldPos.y < 0)
-                {
-                    //return fixed4(1, 0, 0, 1);
-                }
-                if (i.worldPos.z > 0)
-                {
-                    //return fixed4(0, 1, 0, 1);
-                }
-                float width = _Threshold * 0.4;
+                float4 col = sphere_wave(i.worldPosSrc, _CenterA, _FreqA, _SpeedA, _ValueA, _ColorA);
+                col *= sphere_wave(i.worldPosSrc, _CenterB, _FreqB, _SpeedB, _ValueB, _ColorB);
+                col *= sphere_wave(i.worldPosSrc, _CenterC, _FreqC, _SpeedC, _ValueC, _ColorC);
+                
+                float v = 1 + SimplexNoise(SimplexNoiseGrad(i.worldPosDis * 0.5) * 0.25);
+                v *= 0.25;
+                float width = _Threshold * 0.75;
 
                 if (v < _Threshold)
                 {

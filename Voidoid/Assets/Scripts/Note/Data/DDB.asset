@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31280f25c9f345008215b5bb6c57c70a, type: 3}
+  m_Name: DDB
+  m_EditorClassIdentifier: Assembly-CSharp::Voidoid.Note.ScoreData
+  score:
+  - bar: 0
+    beat: 2
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 4
+    beat: 0
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 8
+    beat: 2
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 12
+    beat: 0
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 16
+    beat: 2
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 20
+    beat: 0
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 24
+    beat: 2
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 28
+    beat: 0
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 32
+    beat: 2
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 36
+    beat: 0
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 54
+    beat: 1
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 56
+    beat: 2
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 58
+    beat: 1
+    duration: 1
+    octave: 4
+    pitch: 2
+  - bar: 60
+    beat: 0
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 62
+    beat: 1
+    duration: 1
+    octave: 4
+    pitch: 2
+  - bar: 64
+    beat: 2
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 66
+    beat: 1
+    duration: 1
+    octave: 4
+    pitch: 2
+  - bar: 68
+    beat: 0
+    duration: 1
+    octave: 3
+    pitch: 7
+  - bar: 70
+    beat: 1
+    duration: 1
+    octave: 4
+    pitch: 2

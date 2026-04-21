@@ -79,7 +79,7 @@ Material:
     - _SpecularHighlights: 1
     - _Speed: 0.5
     - _SrcBlend: 1
-    - _Threshold: 0.78
+    - _Threshold: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:

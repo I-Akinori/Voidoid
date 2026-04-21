@@ -1,0 +1,335 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31280f25c9f345008215b5bb6c57c70a, type: 3}
+  m_Name: MCK-B
+  m_EditorClassIdentifier: Assembly-CSharp::Voidoid.Note.ScoreData
+  score:
+  - bar: 40
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 40
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 40
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 40
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 41
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 0
+  - bar: 41
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 41
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 4
+  - bar: 41
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 42
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 42
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 42
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 42
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 43
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 7
+  - bar: 43
+    beat: 1.5
+    duration: 0.5
+    octave: 4
+    pitch: 4
+  - bar: 43
+    beat: 2
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 43
+    beat: 2.5
+    duration: 0.5
+    octave: 4
+    pitch: 4
+  - bar: 44
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 44
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 44
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 44
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 45
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 0
+  - bar: 45
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 45
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 4
+  - bar: 45
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 46
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 46
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 46
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 46
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 47
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 7
+  - bar: 47
+    beat: 1.5
+    duration: 0.5
+    octave: 4
+    pitch: 4
+  - bar: 47
+    beat: 2
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 47
+    beat: 2.5
+    duration: 0.5
+    octave: 4
+    pitch: 4
+  - bar: 48
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 48
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 48
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 48
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 49
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 0
+  - bar: 49
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 49
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 4
+  - bar: 49
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 50
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 50
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 50
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 50
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 51
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 7
+  - bar: 51
+    beat: 1.5
+    duration: 0.5
+    octave: 4
+    pitch: 4
+  - bar: 51
+    beat: 2
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 51
+    beat: 2.5
+    duration: 0.5
+    octave: 4
+    pitch: 4
+  - bar: 52
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 52
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 52
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 52
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 53
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 0
+  - bar: 53
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 53
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 4
+  - bar: 53
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 54
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 54
+    beat: 1.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 54
+    beat: 2
+    duration: 0.5
+    octave: 3
+    pitch: 7
+  - bar: 54
+    beat: 2.5
+    duration: 0.5
+    octave: 3
+    pitch: 9
+  - bar: 55
+    beat: 1
+    duration: 0.5
+    octave: 4
+    pitch: 7
+  - bar: 55
+    beat: 1.5
+    duration: 0.5
+    octave: 4
+    pitch: 4
+  - bar: 55
+    beat: 2
+    duration: 0.5
+    octave: 4
+    pitch: 2
+  - bar: 55
+    beat: 2.5
+    duration: 0.5
+    octave: 4
+    pitch: 4

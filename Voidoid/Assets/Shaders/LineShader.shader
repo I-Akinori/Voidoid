@@ -3,8 +3,7 @@ Shader "Unlit/LineShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _ColorA ("ColorA", Color) = (1, 1, 1, 1)
-        _ColorB ("ColorB", Color) = (1, 1, 1, 1)
+        _Color ("Color", Color) = (1, 1, 1, 1)
         _Origin ("Origin", Vector) = (0, 0, 0, 0)
         _Freq ("Freq", float) = 0.5
         _Speed ("Speed", float) = 0.5
@@ -41,8 +40,6 @@ Shader "Unlit/LineShader"
             sampler2D _MainTex;
             float4 _MainTex_ST;
             float4 _Color;
-            float4 _ColorA;
-            float4 _ColorB;
             float4 _Origin;
             float _Freq;
             float _Speed;
@@ -60,8 +57,8 @@ Shader "Unlit/LineShader"
             fixed4 frag (v2f i) : SV_Target
             {
                 float y = i.uv.y - 0.5;
-                float4 col = i.color;
-                col.a *= 1 - abs(y) * 2;
+                float4 col = i.color * _Color;
+                //col.a *= 1 - abs(y) * 2;
                 return col;
             }
             ENDCG

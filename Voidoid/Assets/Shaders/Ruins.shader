@@ -79,7 +79,7 @@ Shader "Unlit/Ruins"
             {
                 float4 col = tex2D(_MainTex, i.uv);
                 float4 colA = _ColorA;
-                float4 colB = col;//_ColorB;
+                float4 colB = _ColorB;//_ColorB;
                 float k = generateValue(i.uv);
                 if (k > _Threshold)
                 {
