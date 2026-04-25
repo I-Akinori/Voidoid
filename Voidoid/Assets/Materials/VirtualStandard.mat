@@ -32,17 +32,17 @@ Material:
     - _SpeedA: 0.5
     - _SpeedB: 0.125
     - _SpeedC: 0.125
-    - _Threshold: -0.000044564018
+    - _Threshold: -0.0009806788
     - _Value: 1.0044447
-    - _ValueA: 0.6711111
-    - _ValueB: 1
-    - _ValueC: 1.0133332
+    - _ValueA: 0.9288887
+    - _ValueB: 1.0133362
+    - _ValueC: 1.0133314
     m_Colors:
     - _Axis: {r: 1, g: 1, b: 1, a: 0}
     - _Center: {r: 1, g: 1.7, b: 5, a: 1}
     - _CenterA: {r: 1, g: 0.3888889, b: 5, a: 1}
-    - _CenterB: {r: 0, g: 1.3499999, b: 4.4, a: 1}
-    - _CenterC: {r: 0.55, g: 1.6, b: 5, a: 1}
+    - _CenterB: {r: 0, g: 1.7666667, b: 4.4, a: 1}
+    - _CenterC: {r: 0.55, g: 1.7666667, b: 5, a: 1}
     - _Color: {r: 0.24705882, g: 0.49803922, b: 0.24705882, a: 1}
     - _ColorA: {r: 0.24705882, g: 0.49803922, b: 0.24705882, a: 1}
     - _ColorB: {r: 1, g: 0, b: 0, a: 1}

@@ -62,15 +62,15 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _CubeDance: -0.000042917374
-    - _CustomTime: 4.024
+    - _CubeDance: -0.00096877536
+    - _CustomTime: 23.662788
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Julia: -0.000030327503
+    - _Julia: -0.000797049
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1

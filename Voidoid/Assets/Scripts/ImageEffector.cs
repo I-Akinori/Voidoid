@@ -70,7 +70,7 @@ public class ImageEffector : MonoBehaviour
     }
     public void ContinueDistortion()
     {
-        var dV = (distSustain - distTimes[target]) * 0.01f;
+        var dV = (distSustain - distTimes[target]) * Time.deltaTime * 0.25f;
         distTimes[target] += dV;
         distTimes[target] = Mathf.Min(distTimes[target], distSustain);
         if (target != maxIndex && distTimes[target] > MaxDistortionIntensity)
@@ -83,7 +83,7 @@ public class ImageEffector : MonoBehaviour
     }
     public void ContinueVignette()
     {
-        var dV = (vigSustain - vigTime) * 0.01f;
+        var dV = (vigSustain - vigTime) * Time.deltaTime * 0.25f;
         vigTime += dV;
         vigTime = Mathf.Min(vigTime, vigSustain);
     }
@@ -92,7 +92,7 @@ public class ImageEffector : MonoBehaviour
     }
     public void ContinueAberration()
     {
-        var dV = (abeSustain - abeTime) * 0.04f;
+        var dV = (abeSustain - abeTime) * Time.deltaTime * 0.5f;
         abeTime += dV;
         abeTime = Mathf.Min(abeTime, abeSustain);
     }

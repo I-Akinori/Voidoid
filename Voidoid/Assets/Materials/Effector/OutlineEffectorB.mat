@@ -66,13 +66,13 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Dissolve: -0.000048610345
+    - _Dissolve: -0.001008807
     - _DstBlend: 0
     - _Freq: 0.5
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 0.36666664
+    - _Height: 0.3111111
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -83,7 +83,7 @@ Material:
     - _SrcBlend: 1
     - _Threshold: 0.255
     - _UVSec: 0
-    - _Value: -0.013333201
+    - _Value: -0.013331413
     - _ZWrite: 1
     m_Colors:
     - _Axis: {r: 0.5, g: 0.2, b: -0.7, a: 0}
